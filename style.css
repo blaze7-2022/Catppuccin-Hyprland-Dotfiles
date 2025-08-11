@@ -1,0 +1,221 @@
+@import "mocha.css";
+
+* {
+  font-family: JetBrains Mono;
+  font-size: 17px;
+  min-height: 0;
+}
+
+#waybar {
+  background: @base;
+  color: @text;
+  margin: 5px 5px;
+}
+
+#workspaces {
+  background-color: @surface0;
+  border-radius: 20px;
+  margin: 0.7rem 1rem;
+  padding: 4px 4px;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+#workspaces button {
+  color: @surface1;
+  font-weight: bolder;
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+#workspaces button.active {
+  color: @mauve;
+  box-shadow: none;
+  outline: none;
+}
+
+
+
+#bluetooth,
+#backlight,
+#battery,
+#pulseaudio {
+  background-color: @green;
+  padding: 0.4rem 0.7rem;
+  margin: 5px 0;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+#bluetooth {
+  color: @base;
+}
+
+
+#clock {
+  background-color: @teal;
+  padding: 0.5rem 1rem;
+  color: @base;
+  margin: 5px 0;
+  border-radius: 20px;
+  margin-right: 1rem;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+#battery {
+  color: @base;
+}
+
+
+#network {
+  background-color: @yellow;
+  padding: 0.5rem 1rem;
+  color: @base;
+  margin: 5px 0;
+  border-radius: 20px;
+  margin-right: 1rem;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+
+#battery.charging {
+  color: @base;
+}
+
+#battery.warning:not(.charging) {
+  color: @base;
+}
+
+#backlight {
+  color: @base;
+}
+
+#battery {
+  border-bottom-right-radius: 20px;
+  margin-right: 1rem;
+  border-top-right-radius: 20px;
+}
+
+#network {
+    color: @base;
+}
+
+#pulseaudio {
+  color: @base;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  margin-left: 1rem;
+}
+
+
+#custom-power {
+    margin-right: 1rem;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    color: @base;
+}
+
+#tray {
+  background-color: #45475a;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+tooltip {
+    background-color: #1e1e2e; /* Mocha base (adjust for your flavor) */
+    color: #cdd6f4; /* Mocha text (adjust for your flavor) */
+    border: 1px solid #cba6f7; /* Mocha surface0 (adjust for your flavor) */
+    padding: 8px;
+    border-radius: 4px;
+    font-family: JetBrains Mono; /* Use a monospace font for better calendar alignment */
+}
+
+#window
+{
+    background-color: @peach;
+    color: @base;
+    padding: 0.5rem 1rem;
+    margin: 5px 0;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+    border-radius: 20px;
+}
+
+#cpu,
+#memory,
+#temperature {
+  background-color: @maroon;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+
+}
+
+#cpu{
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  margin-left: 1rem;
+  color: @base;
+}
+
+#temperature{
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  color: @base;
+  margin-right: 1rem
+}
+
+#memory {
+  color: @base;
+}
+
+
+#custom-power {
+  background-color: @mauve;
+  padding: 0.4rem 0.7rem;
+  margin: 5px 0;
+  margin-right: 1rem;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  color: @base;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+#custom-notification {
+  color: @base;
+  background-color: @mauve;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 0.4rem 0.7rem;
+  margin: 5px 0;
+  margin-left: 1rem;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+#custom-evolution-launcher,
+#custom-spotify-launcher {
+  background-color: @lavender;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+#custom-evolution-launcher {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  color: @base;
+}
+
+#custom-spotify-launcher {
+  color: @base;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+

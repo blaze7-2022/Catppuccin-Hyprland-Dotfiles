@@ -1,0 +1,168 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "margin": "0 0 0 0",
+
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+
+    "modules-left": ["hyprland/workspaces", "custom/evolution-launcher", "custom/spotify-launcher", "cpu", "memory", "temperature"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["pulseaudio", "backlight","bluetooth", "battery", "network", "clock", "tray", "custom/notification", "custom/power"],
+
+    "hyprland/workspaces": {
+         "disable-scroll": true,
+         "sort-by-name": true,
+         "format": " {icon} ",
+         "format-icons": {
+             "default": "\uf111",
+         },
+     },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "timezone": "GB",
+        "tooltip-format": "<big>{:%d/%m/%y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%d/%m/%Y}",
+        "format": "{:%H:%M}"
+    },
+   
+    "backlight": {
+  "format": "{icon}",
+  "format-icons": [
+    "\uf111",
+    "\uf2a8",
+    "\uf042",
+    "\uf185",
+    "\uf185"
+  ],
+  "tooltip": true,
+  "on-scroll-up": "brightnessctl set +5%",
+  "on-scroll-down": "brightnessctl set 5%-",
+  "device": "intel_backlight",
+  "states": {
+    "0": 0,
+    "25": 1,
+    "50": 2,
+    "75": 3,
+    "100": 4
+  }
+},
+    
+
+    "network": {
+    "format": "\uf1eb {essid}",
+    "tooltip-format": "{essid} ({signalStrength}%)",
+    "format-disconnected": " "
+    },
+    
+    "battery": {
+    "states": {
+        "warning": 10
+    },
+    "format": "{icon}",
+    "tooltip-format": "{capacity}%",
+    "format-icons": [
+        "\uf244",
+        "\uf243",
+        "\uf242",
+        "\uf241",
+        "\uf240"
+    ]    
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon}",
+        "tooltip-format": "{volume}%",
+        "format-muted": "\uf6a9",
+        "format-icons": {
+            "default": ["\uf027", "\uf028", "\uf028"]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wlogout &",
+        "format": "\uf011"
+    },
+    "hyprland/window": {
+    "format": "{title}"
+    },
+
+
+    "cpu": {
+      "name": "cpu",
+      "interval": 1,
+      "format": "\uf2db",
+      "tooltip": true,
+      "critical_threshold": 80,
+      "format-critical": "{usage}% "
+    },
+    "memory": {
+      "name": "memory",
+      "interval": 5,
+      "format": "",
+      "tooltip": true,
+      "format-alt": "\uf538{used:G}/{total:G}",
+      "critical_threshold": 90,
+      "format-critical": "{percentage}% "
+    },
+    "temperature": {
+      "name": "temperature",
+      "interval": 10,
+      "format": "\uf2c7",
+      "tooltip": true,
+      "critical_threshold": 70,
+      "format-critical": "\f2c7{temperatureC}°C",
+      "sensor": "Intel digital thermal sensor" 
+    },
+ 
+    "bluetooth": {
+    "format": "\uf293",
+    "format-connected": "󰂱 {device_count}",
+    "format-off": "󰂮 Off",
+    "tooltip": true,
+    "on-click": "blueman-manager"
+    },
+    
+    "custom/notification": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "\uf0f3<span foreground='red'><sup>\uf06a</sup></span>",
+      "none": "\uf0f3",
+      "dnd-notification": "\uf1f6<span foreground='red'><sup>\uf06a</sup></span>",
+      "dnd-none": "\uf1f6",
+      "inhibited-notification": "\uf0f3<span foreground='red'><sup>\uf06a</sup></span>",
+      "inhibited-none": "\uf0f3",
+      "dnd-inhibited-notification": "\uf1f6<span foreground='red'><sup>\uf06a</sup></span>",
+      "dnd-inhibited-none": "\uf1f6"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+
+    "custom/evolution-launcher": { // New module for Evolution
+        "format": "{}",
+        "tooltip-format": "Launch Evolution Mail",
+        "on-click": "evolution", // The command to launch Evolution
+        "exec": "echo ''",     // Font Awesome email/envelope icon (or similar)
+        "interval": "once"
+    },
+
+   "custom/spotify-launcher": {
+    "format": "",  // This is the Spotify icon in Font Awesome
+    "tooltip-format": "Launch Spotify",
+    "on-click": "flatpak run com.spotify.Client", 
+    "interval": 3600
+    }
+
+   
+}
