@@ -1,0 +1,155 @@
+/* === Big pill Waybar (Gruvbox Dark Hard) === */
+window#waybar {
+    background-color: transparent;
+}
+
+/* === Global font === */
+* {
+    font-family: "JetBrains Mono";
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* === Remove module backgrounds/borders (all sit inside the pill) === */
+#workspaces,
+#window,
+#custom-evolution-launcher,
+#custom-spotify-launcher,
+#cpu,
+#memory,
+#temperature,
+#pulseaudio,
+#backlight,
+#bluetooth,
+#battery,
+#network,
+#clock,
+#custom-notification,
+#custom-power,
+#tray {
+    background: #282828;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0 0.9rem;
+    color: #ebdbb2; /* Gruvbox Foreground */
+}
+
+/* === Workspaces inside pill === */
+#workspaces {
+  border-radius: 20px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+#workspaces button {
+    padding: 0.3rem 0.3rem;
+    background-color: transparent;
+    color: #a89984; /* Gruvbox gray */
+    border-radius: 12px;
+}
+
+#workspaces button.active {
+    color: #d79921; /* Yellow */
+}
+
+/* === Status colors === */
+#battery.warning {
+    color: #d79921; /* Yellow */
+}
+
+#battery.critical {
+    color: #cc241d; /* Red */
+}
+
+#network.disconnected {
+    color: #cc241d; /* Red */
+}
+
+#pulseaudio.muted {
+    color: #928374; /* Muted gray */
+}
+
+#cpu,
+#memory,
+#temperature {
+}
+
+#temperature {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-right: 1rem;
+}
+
+#cpu {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+#window {
+  border-radius: 20px;
+}
+
+#custom-evolution-launcher,
+#custom-spotify-launcher {
+}
+
+#custom-evolution-launcher {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+#custom-spotify-launcher {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-right: 1rem;
+}
+
+#clock {
+  border-radius: 20px;
+  margin-right: 1rem;
+}
+
+#network {
+  border-radius: 20px;
+  margin-right: 1rem;
+}
+
+#tray {
+  border-radius: 20px;
+  margin-right: 1rem;
+}
+
+#pulseaudio,
+#battery,
+#backlight,
+#bluetooth {
+}
+
+#pulseaudio {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin-left: 1rem;
+}
+
+#battery {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-right: 1rem;
+}
+
+#custom-notification,
+#custom-power {
+}
+
+#custom-power {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-right: 1rem;
+}
+
+#custom-notification {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+
+
